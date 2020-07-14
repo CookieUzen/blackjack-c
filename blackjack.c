@@ -62,16 +62,15 @@ void newPlayer ( Player * player, int index, char playerName[] ) {
 }
 
 int drawCard () {
-	while ( 1 ) {
-		int i = rand() % 13;
-		int j = rand() % 4;
-		int selection = cards[i][j];
+	int selection, i, j;
+	do {
+		i = rand() % 13;
+		j = rand() % 4;
+		selection = cards[i][j];
+	} while ( selection == 0 );
 
-		if ( selection != 0 ) {
-			cards[i][j] = 0;
-			return selection;
-		}
-	}
+	cards[i][j] = 0;
+	return selection;
 }
 
 int addCard ( Player * player, int index ) {
