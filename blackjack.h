@@ -4,10 +4,11 @@
 #define BLACKJACK_H_INCLUDED
 
 #include <stdio.h>
+#include <unistd.h>
 
 void printStatus ( Player * player, int index );
 
-// deck of card, with card values
-// spade, club, heart, diamonds
 extern char cards[4][13];
+extern int playerCount;
+
 #endif
